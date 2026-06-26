@@ -1,0 +1,58 @@
+/* ── App root ── */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Background canvas container (fixed, full-viewport) ── */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none !important;
+}
+
+/* The canvas renders its own opaque dark background (alpha:false),
+   no overlay needed — the shader handles everything */
+
+/* Block pointer events on everything inside */
+.background-container,
+.background-container > *,
+.background-container canvas {
+  pointer-events: none !important;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* All page sections sit above the canvas */
+section, header, footer, nav {
+  position: relative;
+  z-index: 10;
+}
+
+/* Headings: crisp white + subtle shadow over animated bg */
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Body text legibility over the canvas */
+p, span, li {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Form inputs */
+input, textarea, select {
+  background-color: rgba(2, 10, 20, 0.85) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  text-shadow: none;
+}
