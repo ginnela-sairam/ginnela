@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import FloatingLines from './components/FloatingLines.jsx';
 import ginnelaLogo from './assets/ginnela-logo-real.jpg';
 import './App.css';
@@ -883,13 +884,16 @@ export default function App() {
   }, []);
 
   return (
-    <SharedLayout currentPage={currentPage} navigate={navigate}>
-      {currentPage === '/about'
-        ? <AboutPage navigate={navigate} />
-        : currentPage === '/web-services'
-        ? <WebServicesPage navigate={navigate} />
-        : <HomePage navigate={navigate} />
-      }
-    </SharedLayout>
+    <>
+      <SharedLayout currentPage={currentPage} navigate={navigate}>
+        {currentPage === '/about'
+          ? <AboutPage navigate={navigate} />
+          : currentPage === '/web-services'
+          ? <WebServicesPage navigate={navigate} />
+          : <HomePage navigate={navigate} />
+        }
+      </SharedLayout>
+      <Analytics />
+    </>
   );
 }
