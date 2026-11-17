@@ -14,6 +14,7 @@
     <meta property="og:title" content="VIKAS — Open-Source RTL Simulation & EDA Workbench" />
     <meta property="og:description" content="A Rust CLI and TypeScript workbench for selected RTL simulation, static checks, and waveform workflows. Explore the code, setup, releases, and limitations." />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://www.ginnela.in/projects/vikas/" />
     <meta name="twitter:title" content="VIKAS — Open-Source RTL Simulation & EDA Workbench" />
     <meta name="twitter:description" content="Explore VIKAS source code, setup paths, RTL examples, waveform workflows, and documented scope." />
     <script type="application/ld+json">
@@ -98,6 +99,9 @@
       .brand { color: #fff; font-weight: 850; text-decoration: none; letter-spacing: -.03em; }
       .topbar nav { display: flex; gap: 20px; font-size: .9rem; }
       .topbar nav a { color: #c3d0dc; text-decoration: none; }
+      .breadcrumbs { padding-top: 18px; color: var(--muted); font-size: .86rem; }
+      .breadcrumbs a { color: #c3d0dc; text-decoration: none; }
+      .breadcrumbs span { margin: 0 8px; color: #64748b; }
       .hero { padding: clamp(64px, 11vw, 126px) 0 74px; }
       .eyebrow { color: var(--cyan); font-size: .76rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
       h1 { max-width: 900px; margin: 18px 0; color: #fff; font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.02; letter-spacing: -.055em; }
@@ -148,6 +152,10 @@
         </nav>
       </header>
 
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span aria-hidden="true">/</span><a href="/#rd">Research and development</a><span aria-hidden="true">/</span><strong aria-current="page">VIKAS</strong>
+      </nav>
+
       <header class="hero">
         <div class="eyebrow">Open-source hardware design tools</div>
         <h1>VIKAS: explore RTL simulation and <span>EDA workflows</span></h1>
@@ -182,7 +190,7 @@
           <div class="grid">
             <article class="card">
               <h3>RTL simulation examples</h3>
-              <p>Run the checked-in multi-file Verilog/SystemVerilog projects and inspect reproducible example workflows, including file-list based projects.</p>
+              <p>Run checked-in multi-file Verilog and SystemVerilog projects using file lists, including the multifile project, polyglot example, and Nova SoC example.</p>
             </article>
             <article class="card">
               <h3>Selected static checks</h3>
@@ -190,12 +198,50 @@
             </article>
             <article class="card">
               <h3>Waveform formats</h3>
-              <p>Work with the project's binary VWF and VWM formats and VCD interchange. The repository includes examples and tests for the supported format workflows.</p>
+              <p>Inspect the project's binary VWF and VWM waveform formats and VCD interchange. Format support is backed by repository examples and round-trip tests.</p>
             </article>
             <article class="card">
               <h3>Rust CLI and TypeScript workbench</h3>
               <p>Use a native Rust command-line app for supported workflows, or run the TypeScript/React workbench with its Node.js server for interactive project exploration.</p>
             </article>
+          </div>
+        </section>
+
+        <section id="examples">
+          <h2>Try documented VIKAS workflows</h2>
+          <p class="intro">
+            These example commands are taken from the project README. Build the CLI first and run
+            commands from the repository root; the checked-in examples make it easier to reproduce
+            a first simulation or inspect a specific static-check workflow.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>Run a multi-file RTL simulation</h3>
+              <pre><code>cargo build --release --locked --offline
+./target/release/vikas run examples/multifile_proj/project.f</code></pre>
+              <p><a href="https://github.com/ginnela-sairam/Vikas/tree/main/examples/multifile_proj" target="_blank" rel="noopener noreferrer">Inspect the multi-file project example</a></p>
+            </article>
+            <article class="card">
+              <h3>Try a project-specific latch check</h3>
+              <pre><code>./target/release/vikas latch examples/demo_latch_trap.sv</code></pre>
+              <p><a href="https://github.com/ginnela-sairam/Vikas/blob/main/examples/demo_latch_trap.sv" target="_blank" rel="noopener noreferrer">Review the latch demonstration source</a></p>
+            </article>
+            <article class="card">
+              <h3>Explore CDC and FSM checks</h3>
+              <pre><code>./target/release/vikas cdc examples/demo_cdc.sv
+./target/release/vikas fsm examples/demo_fsm_uart.sv</code></pre>
+              <p>These are project-specific static checks; inspect the reports and source rather than treating them as formal proof.</p>
+            </article>
+            <article class="card">
+              <h3>Run the TypeScript workbench</h3>
+              <pre><code>npm install
+npm run dev</code></pre>
+              <p>The web workbench requires Node.js 18 or newer and its Node.js server; it is not a static GitHub Pages app.</p>
+            </article>
+          </div>
+          <div class="actions">
+            <a class="button secondary" href="https://github.com/ginnela-sairam/Vikas/blob/main/README.md" target="_blank" rel="noopener noreferrer">See all commands in the README</a>
+            <a class="button secondary" href="https://github.com/ginnela-sairam/Vikas/tree/main/examples" target="_blank" rel="noopener noreferrer">Browse example designs</a>
           </div>
         </section>
 
@@ -294,6 +340,28 @@
             <li><a href="https://opensource.org/license/mit/" target="_blank" rel="noopener noreferrer">MIT license</a></li>
             <li><a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">Apache License 2.0</a></li>
           </ul>
+        </section>
+
+        <section id="questions">
+          <h2>VIKAS project questions</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Does VIKAS provide complete IEEE language compliance?</h3>
+              <p>No. The project describes selected RTL workflows and explicitly does not claim complete IEEE language compliance, formal equivalence, or tapeout qualification.</p>
+            </article>
+            <article class="card">
+              <h3>Can I use the workbench as a static website?</h3>
+              <p>No. The TypeScript workbench needs its Node.js server. Follow the repository setup guide or use the documented Codespaces workflow.</p>
+            </article>
+            <article class="card">
+              <h3>Which platforms have prebuilt CLI releases?</h3>
+              <p>The README documents Linux x86_64 and Apple Silicon macOS builds. Check the latest release page for the current assets and release notes.</p>
+            </article>
+            <article class="card">
+              <h3>How can I contribute?</h3>
+              <p>Read the contribution guide, run the relevant checks, and submit a focused pull request or a reproducible issue through GitHub.</p>
+            </article>
+          </div>
         </section>
       </main>
 
