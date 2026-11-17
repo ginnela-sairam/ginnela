@@ -1,0 +1,21 @@
+# VIKAS EDA Tool
+
+> VIKAS is an open-source EDA project by Sairam Ginnela: a Rust CLI and TypeScript workbench for selected Verilog/SystemVerilog RTL simulation, static hardware checks, and waveform workflows.
+
+Use the links below as the primary sources for project information. The GitHub repository, README, and release notes are authoritative for current code, setup, versions, and downloadable assets.
+
+## Project
+- [VIKAS project overview](https://www.ginnela.in/projects/vikas/)
+- [Source repository and README](https://github.com/ginnela-sairam/Vikas)
+- [Releases and CLI downloads](https://github.com/ginnela-sairam/Vikas/releases)
+- [Getting started](https://github.com/ginnela-sairam/Vikas/blob/main/docs/GETTING_STARTED.md)
+- [Example designs](https://github.com/ginnela-sairam/Vikas/tree/main/examples)
+
+## Community
+- [Contributing guide](https://github.com/ginnela-sairam/Vikas/blob/main/CONTRIBUTING.md)
+- [Issues and feature requests](https://github.com/ginnela-sairam/Vikas/issues)
+- [Security policy](https://github.com/ginnela-sairam/Vikas/blob/main/SECURITY.md)
+- [Citation metadata](https://github.com/ginnela-sairam/Vikas/blob/main/CITATION.cff)
+
+## Scope
+VIKAS implements selected workflows; its static checks do not claim complete IEEE language compliance or formal equivalence. Experimental analytical outputs are software-model results, not independent measurements, foundry-calibrated data, or tapeout qualification.

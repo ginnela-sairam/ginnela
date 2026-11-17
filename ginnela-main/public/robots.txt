@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.ginnela.in/sitemap.xml
+
+# Project summary for AI tools: https://www.ginnela.in/llms.txt

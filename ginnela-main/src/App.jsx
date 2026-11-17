@@ -268,9 +268,9 @@ function HomePage({ navigate }) {
         <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div className="max-w-3xl">
             <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block mb-3">Open-source project</span>
-            <h2 id="vikas-project-title" className="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Meet VIKAS — RTL simulation and EDA workflows</h2>
+            <h2 id="vikas-project-title" className="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">VIKAS EDA tool by Sairam Ginnela</h2>
             <p className="text-gray-300 leading-relaxed mb-5">
-              VIKAS combines a Rust command-line toolkit with a TypeScript workbench for selected RTL simulation, static checks, and waveform workflows. Explore the project overview, setup paths, supported examples, and clearly documented scope before trying it with your designs.
+              Explore an open-source Rust CLI and TypeScript workbench for selected Verilog and SystemVerilog RTL simulation, hardware-design checks, and waveform workflows. Review the project scope, download the CLI, or contribute.
             </p>
             <div className="flex flex-wrap gap-2 text-xs font-semibold text-cyan-100">
               {['Rust CLI', 'RTL simulation', 'Latch / CDC / FSM checks', 'VCD and VIKAS waveforms', 'Open source'].map((topic) => (
