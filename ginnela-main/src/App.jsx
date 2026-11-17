@@ -59,6 +59,7 @@ function SharedLayout({ children, currentPage, navigate }) {
               <button onClick={() => navigate('/web-services')} className={`hover:text-white transition-colors ${currentPage === '/web-services' ? 'text-orange-400' : ''}`}>
                 <span className="flex items-center gap-1.5">🌐 Web Services <span className="text-[10px] px-1.5 py-0.5 bg-orange-500/20 border border-orange-500/40 text-orange-400 rounded-full font-bold tracking-wide">NEW</span></span>
               </button>
+              <a href="/projects/vikas/" className="hover:text-white transition-colors">VIKAS</a>
               <button onClick={() => { if (currentPage !== '/') { navigate('/'); setTimeout(() => document.querySelector('#rd')?.scrollIntoView({behavior:'smooth'}), 150); } else { document.querySelector('#rd')?.scrollIntoView({behavior:'smooth'}); } }} className="hover:text-white transition-colors">R&amp;D</button>
               <button onClick={() => { if (currentPage !== '/') { navigate('/'); setTimeout(() => document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'}), 150); } else { document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'}); } }} className="hover:text-white transition-colors">Contact</button>
             </div>
@@ -86,6 +87,7 @@ function SharedLayout({ children, currentPage, navigate }) {
                   {label}
                 </button>
               ))}
+              <a href="/projects/vikas/" onClick={() => setMobileOpen(false)} className="block w-full text-left text-gray-300 hover:text-white py-2 text-sm font-semibold">VIKAS open-source EDA</a>
             </div>
           )}
         </nav>
@@ -258,6 +260,32 @@ function HomePage({ navigate }) {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* ── FEATURED OPEN-SOURCE PROJECT ── */}
+      <section aria-labelledby="vikas-project-title" className="py-20 px-6 lg:px-12 border-t border-cyan-500/10 bg-gradient-to-br from-black/70 to-cyan-950/20">
+        <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="max-w-3xl">
+            <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block mb-3">Open-source project</span>
+            <h2 id="vikas-project-title" className="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Meet VIKAS — RTL simulation and EDA workflows</h2>
+            <p className="text-gray-300 leading-relaxed mb-5">
+              VIKAS combines a Rust command-line toolkit with a TypeScript workbench for selected RTL simulation, static checks, and waveform workflows. Explore the project overview, setup paths, supported examples, and clearly documented scope before trying it with your designs.
+            </p>
+            <div className="flex flex-wrap gap-2 text-xs font-semibold text-cyan-100">
+              {['Rust CLI', 'RTL simulation', 'Latch / CDC / FSM checks', 'VCD and VIKAS waveforms', 'Open source'].map((topic) => (
+                <span key={topic} className="px-3 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-950/40">{topic}</span>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:min-w-56">
+            <a href="/projects/vikas/" className="px-6 py-3 text-center font-bold text-black bg-cyan-400 rounded-xl hover:bg-cyan-300 transition-colors">
+              Explore VIKAS
+            </a>
+            <a href="https://github.com/ginnela-sairam/Vikas" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-center font-bold text-white border border-white/20 rounded-xl hover:border-cyan-400/60 hover:bg-cyan-600/10 transition-colors">
+              View source on GitHub
+            </a>
+          </div>
         </div>
       </section>
 
@@ -460,6 +488,7 @@ function HomePage({ navigate }) {
                 <ul className="space-y-2 text-sm text-gray-400">
                   <li><a href="#services" className="hover:text-cyan-400 transition-colors">Services</a></li>
                   <li><button onClick={() => navigate('/web-services')} className="hover:text-orange-400 transition-colors text-left">🌐 Web Services</button></li>
+                  <li><a href="/projects/vikas/" className="hover:text-cyan-400 transition-colors">VIKAS open-source project</a></li>
                   <li><a href="#rd" className="hover:text-cyan-400 transition-colors">R&D</a></li>
                   <li><a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a></li>
                 </ul>
