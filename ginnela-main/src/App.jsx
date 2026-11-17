@@ -282,6 +282,12 @@ function HomePage({ navigate }) {
             <a href="/projects/vikas/" className="px-6 py-3 text-center font-bold text-black bg-cyan-400 rounded-xl hover:bg-cyan-300 transition-colors">
               Explore VIKAS
             </a>
+            <a href="/projects/vikas/#download" className="px-6 py-3 text-center font-bold text-white border border-cyan-400/40 rounded-xl hover:border-cyan-300 hover:bg-cyan-600/10 transition-colors">
+              Download the VIKAS CLI
+            </a>
+            <a href="/projects/vikas/#community" className="px-6 py-3 text-center font-bold text-white border border-white/20 rounded-xl hover:border-cyan-400/60 hover:bg-cyan-600/10 transition-colors">
+              Contribute to VIKAS
+            </a>
             <a href="https://github.com/ginnela-sairam/Vikas" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-center font-bold text-white border border-white/20 rounded-xl hover:border-cyan-400/60 hover:bg-cyan-600/10 transition-colors">
               View source on GitHub
             </a>
